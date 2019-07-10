@@ -1,0 +1,26 @@
+{
+  "name": "mogo-africa/common-tool",
+  "description": "ERP package",
+  "version": "0.1.0",
+  "type": "library",
+  "autoload": {
+    "psr-4": { "Common\\Tool\\": "src/" }
+  },
+  "minimum-stability": "dev",
+  "require" : {
+    "php" : "^7.1",
+    "phpunit/phpunit": "^8.3@dev"
+
+  },
+  "license": [
+    "LGPL-2.1-only",
+    "GPL-3.0-or-later"
+  ],
+  "authors": [
+    {
+      "name": "Romans Shvets",
+      "email": "pomaxa@gmail.com",
+      "role": "Maintainer"
+    }
+  ]
+}
