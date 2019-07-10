@@ -1,8 +1,9 @@
 <?php
 
-namespace Common\Tool;
+namespace Test\Common\Tool;
 
 use PHPUnit\Framework\TestCase;
+use \Common\Tool\Transliterator;
 
 class TransliteratorToolTest extends TestCase
 {

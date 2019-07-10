@@ -1,9 +1,10 @@
 <?php
 
 
-namespace Common\Tool;
+namespace Test\Common\Tool;
 
 
+use Common\Tool\Financial;
 use PHPUnit\Framework\TestCase;
 
 class FinancialTest extends TestCase

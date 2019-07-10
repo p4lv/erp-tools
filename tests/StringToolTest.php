@@ -1,7 +1,8 @@
 <?php
 
-namespace Common\Tool;
+namespace Test\Common\Tool;
 
+use Common\Tool\StringTool;
 use PHPUnit\Framework\TestCase;
 
 class StringToolTest extends TestCase

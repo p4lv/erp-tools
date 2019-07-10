@@ -1,7 +1,8 @@
 <?php
 
-namespace Common\Tool;
+namespace Test\Common\Tool;
 
+use Common\Tool\DateTool;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 

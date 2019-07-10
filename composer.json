@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "type": "library",
   "autoload": {
-    "psr-4": { "Common\\Tool\\": "src/" }
+    "psr-4": {
+      "Common\\Tool\\": "src/",
+      "Test\\Common\\Tool\\": "tests/"
+    }
   },
   "minimum-stability": "dev",
   "require" : {
@@ -22,5 +25,8 @@
       "email": "pomaxa@gmail.com",
       "role": "Maintainer"
     }
-  ]
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.0@dev"
+  }
 }

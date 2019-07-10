@@ -385,10 +385,10 @@ class NumberTool
         return $round ? self::round($average) : $average;
     }
 
-    public static function numberToText($number, $country = COUNTRY, $locale = null)
+    public static function numberToText($number, $locale = null)
     {
         if (!$locale) {
-            $locale = Locale::getByCountry($country);
+            $locale = 'en';
         }
 
         $style = \NumberFormatter::SPELLOUT;

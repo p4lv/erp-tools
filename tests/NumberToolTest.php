@@ -1,7 +1,8 @@
 <?php
 
-namespace Common\Tool;
+namespace Test\Common\Tool;
 
+use Common\Tool\NumberTool;
 use PHPUnit\Framework\TestCase;
 
 class NumberToolTest extends TestCase
