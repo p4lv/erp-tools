@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b08b38ec5ad5222dfb6e44e73c6496ce",
+    "content-hash": "205d6ca760ec6d702d42769323bba425",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -1533,67 +1533,6 @@
     ],
     "packages-dev": [
         {
-            "name": "composer/semver",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "37e4db276f38376a63ea67e96b09571d74312779"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/37e4db276f38376a63ea67e96b09571d74312779",
-                "reference": "37e4db276f38376a63ea67e96b09571d74312779",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "time": "2019-04-14T09:35:30+00:00"
-        },
-        {
             "name": "composer/xdebug-handler",
             "version": "1.3.3",
             "source": {
@@ -1636,47 +1575,6 @@
                 "performance"
             ],
             "time": "2019-05-27T17:52:04+00:00"
-        },
-        {
-            "name": "felixfbecker/advanced-json-rpc",
-            "version": "v3.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/felixfbecker/php-advanced-json-rpc.git",
-                "reference": "241c470695366e7b83672be04ea0e64d8085a551"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/felixfbecker/php-advanced-json-rpc/zipball/241c470695366e7b83672be04ea0e64d8085a551",
-                "reference": "241c470695366e7b83672be04ea0e64d8085a551",
-                "shasum": ""
-            },
-            "require": {
-                "netresearch/jsonmapper": "^1.0",
-                "php": ">=7.0",
-                "phpdocumentor/reflection-docblock": "^4.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "AdvancedJsonRpc\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "ISC"
-            ],
-            "authors": [
-                {
-                    "name": "Felix Becker",
-                    "email": "felix.b@outlook.com"
-                }
-            ],
-            "description": "A more advanced JSONRPC implementation",
-            "time": "2018-09-10T08:58:41+00:00"
         },
         {
             "name": "jean85/pretty-package-versions",
@@ -1728,89 +1626,6 @@
                 "versions"
             ],
             "time": "2019-01-14T10:28:42+00:00"
-        },
-        {
-            "name": "microsoft/tolerant-php-parser",
-            "version": "v0.0.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Microsoft/tolerant-php-parser.git",
-                "reference": "89386de8dec9c004c8ea832692e236c92f34b542"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Microsoft/tolerant-php-parser/zipball/89386de8dec9c004c8ea832692e236c92f34b542",
-                "reference": "89386de8dec9c004c8ea832692e236c92f34b542",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Microsoft\\PhpParser\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rob Lourens",
-                    "email": "roblou@microsoft.com"
-                }
-            ],
-            "description": "Tolerant PHP-to-AST parser designed for IDE usage scenarios",
-            "time": "2019-03-09T19:24:59+00:00"
-        },
-        {
-            "name": "netresearch/jsonmapper",
-            "version": "v1.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cweiske/jsonmapper.git",
-                "reference": "047dafe26facbba1e997e9fb3b3c298562d75a0b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cweiske/jsonmapper/zipball/047dafe26facbba1e997e9fb3b3c298562d75a0b",
-                "reference": "047dafe26facbba1e997e9fb3b3c298562d75a0b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.8.35 || ~5.7 || ~6.4",
-                "squizlabs/php_codesniffer": "~1.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "JsonMapper": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "OSL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Weiske",
-                    "email": "cweiske@cweiske.de",
-                    "homepage": "http://github.com/cweiske/jsonmapper/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Map nested JSON structures onto PHP classes",
-            "time": "2019-07-08T18:46:43+00:00"
         },
         {
             "name": "nette/bootstrap",
@@ -1891,12 +1706,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "1010ceedcf51b5d0c581540342b819bf9b9f6a54"
+                "reference": "2f52649fa508f2fbb90549b2bdf28af02907ff9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/1010ceedcf51b5d0c581540342b819bf9b9f6a54",
-                "reference": "1010ceedcf51b5d0c581540342b819bf9b9f6a54",
+                "url": "https://api.github.com/repos/nette/di/zipball/2f52649fa508f2fbb90549b2bdf28af02907ff9c",
+                "reference": "2f52649fa508f2fbb90549b2bdf28af02907ff9c",
                 "shasum": ""
             },
             "require": {
@@ -1956,7 +1771,7 @@
                 "nette",
                 "static"
             ],
-            "time": "2019-07-08T12:19:23+00:00"
+            "time": "2019-07-11T18:01:53+00:00"
         },
         {
             "name": "nette/finder",
@@ -2026,12 +1841,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/neon.git",
-                "reference": "ecabb3b21bb578d91758efcd655ca218337c6b56"
+                "reference": "d9c3248886d66710d7115226c721c6012105870e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/neon/zipball/ecabb3b21bb578d91758efcd655ca218337c6b56",
-                "reference": "ecabb3b21bb578d91758efcd655ca218337c6b56",
+                "url": "https://api.github.com/repos/nette/neon/zipball/d9c3248886d66710d7115226c721c6012105870e",
+                "reference": "d9c3248886d66710d7115226c721c6012105870e",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +1894,7 @@
                 "nette",
                 "yaml"
             ],
-            "time": "2019-07-08T20:43:24+00:00"
+            "time": "2019-07-11T18:04:32+00:00"
         },
         {
             "name": "nette/php-generator",
@@ -2087,12 +1902,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/php-generator.git",
-                "reference": "aea6e81437bb238e5f0e5b5ce06337433908e63b"
+                "reference": "45fedc4d7c883d0c3231c7be107481f5dc504a9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/php-generator/zipball/aea6e81437bb238e5f0e5b5ce06337433908e63b",
-                "reference": "aea6e81437bb238e5f0e5b5ce06337433908e63b",
+                "url": "https://api.github.com/repos/nette/php-generator/zipball/45fedc4d7c883d0c3231c7be107481f5dc504a9a",
+                "reference": "45fedc4d7c883d0c3231c7be107481f5dc504a9a",
                 "shasum": ""
             },
             "require": {
@@ -2138,7 +1953,7 @@
                 "php",
                 "scaffolding"
             ],
-            "time": "2019-07-05T13:01:56+00:00"
+            "time": "2019-07-11T18:05:03+00:00"
         },
         {
             "name": "nette/robot-loader",
@@ -2208,12 +2023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/schema.git",
-                "reference": "a307303e152226d0464b6500ccec4c3c1fae57ef"
+                "reference": "34976792c24f1af184cd840f5f38533fdef0ca09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/schema/zipball/a307303e152226d0464b6500ccec4c3c1fae57ef",
-                "reference": "a307303e152226d0464b6500ccec4c3c1fae57ef",
+                "url": "https://api.github.com/repos/nette/schema/zipball/34976792c24f1af184cd840f5f38533fdef0ca09",
+                "reference": "34976792c24f1af184cd840f5f38533fdef0ca09",
                 "shasum": ""
             },
             "require": {
@@ -2257,7 +2072,7 @@
                 "config",
                 "nette"
             ],
-            "time": "2019-07-09T16:51:30+00:00"
+            "time": "2019-07-11T18:36:04+00:00"
         },
         {
             "name": "nette/utils",
@@ -2265,12 +2080,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "033486c04094f8d93e956c6ead033fa868a676ae"
+                "reference": "e44550d473f8ec49e7f73336b4397e02bb6bb7b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/033486c04094f8d93e956c6ead033fa868a676ae",
-                "reference": "033486c04094f8d93e956c6ead033fa868a676ae",
+                "url": "https://api.github.com/repos/nette/utils/zipball/e44550d473f8ec49e7f73336b4397e02bb6bb7b3",
+                "reference": "e44550d473f8ec49e7f73336b4397e02bb6bb7b3",
                 "shasum": ""
             },
             "require": {
@@ -2333,7 +2148,7 @@
                 "utility",
                 "validation"
             ],
-            "time": "2019-07-01T14:29:10+00:00"
+            "time": "2019-07-11T18:27:08+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2437,75 +2252,6 @@
             "time": "2019-02-21T12:16:21+00:00"
         },
         {
-            "name": "phan/phan",
-            "version": "v1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phan/phan.git",
-                "reference": "f872949b366d84bd9ce79d8b0ea991edbe258377"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phan/phan/zipball/f872949b366d84bd9ce79d8b0ea991edbe258377",
-                "reference": "f872949b366d84bd9ce79d8b0ea991edbe258377",
-                "shasum": ""
-            },
-            "require": {
-                "composer/semver": "^1.4",
-                "composer/xdebug-handler": "^1.3.2",
-                "ext-filter": "*",
-                "ext-json": "*",
-                "felixfbecker/advanced-json-rpc": "^3.0.3",
-                "microsoft/tolerant-php-parser": "0.0.17",
-                "php": "^7.0.0",
-                "sabre/event": "^5.0",
-                "symfony/console": "^2.3|^3.0|~4.0",
-                "symfony/polyfill-mbstring": "^1.11.0"
-            },
-            "require-dev": {
-                "brianium/paratest": "^1.1",
-                "phpunit/phpunit": "^6.3.0"
-            },
-            "suggest": {
-                "ext-ast": "Needed for parsing ASTs (unless --use-fallback-parser is used). 1.0.1+ is recommended, php-ast ^0.1.5|^1.0.0 is needed.",
-                "ext-igbinary": "Improves performance of polyfill when ext-ast is unavailable",
-                "ext-tokenizer": "Needed for non-AST support and file/line-based suppressions."
-            },
-            "bin": [
-                "phan",
-                "phan_client",
-                "tocheckstyle"
-            ],
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "Phan\\": "src/Phan"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rasmus Lerdorf"
-                },
-                {
-                    "name": "Andrew S. Morrison"
-                },
-                {
-                    "name": "Tyson Andre"
-                }
-            ],
-            "description": "A static analyzer for PHP",
-            "keywords": [
-                "analyzer",
-                "php",
-                "static"
-            ],
-            "time": "2019-05-23T00:25:02+00:00"
-        },
-        {
             "name": "phpstan/phpdoc-parser",
             "version": "dev-master",
             "source": {
@@ -2558,12 +2304,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "bbb76df4421ad7d1565fdb8bc12f7df12678782e"
+                "reference": "d5da52c9962a710ccd27c1824706278380f28000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/bbb76df4421ad7d1565fdb8bc12f7df12678782e",
-                "reference": "bbb76df4421ad7d1565fdb8bc12f7df12678782e",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d5da52c9962a710ccd27c1824706278380f28000",
+                "reference": "d5da52c9962a710ccd27c1824706278380f28000",
                 "shasum": ""
             },
             "require": {
@@ -2625,7 +2371,7 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2019-07-09T09:30:16+00:00"
+            "time": "2019-07-11T07:35:58+00:00"
         },
         {
             "name": "psr/container",
@@ -2724,77 +2470,17 @@
             "time": "2018-11-21T13:42:00+00:00"
         },
         {
-            "name": "sabre/event",
-            "version": "5.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sabre-io/event.git",
-                "reference": "f5cf802d240df1257866d8813282b98aee3bc548"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/event/zipball/f5cf802d240df1257866d8813282b98aee3bc548",
-                "reference": "f5cf802d240df1257866d8813282b98aee3bc548",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=6",
-                "sabre/cs": "~1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sabre\\Event\\": "lib/"
-                },
-                "files": [
-                    "lib/coroutine.php",
-                    "lib/Loop/functions.php",
-                    "lib/Promise/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Evert Pot",
-                    "email": "me@evertpot.com",
-                    "homepage": "http://evertpot.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "sabre/event is a library for lightweight event-based programming",
-            "homepage": "http://sabre.io/event/",
-            "keywords": [
-                "EventEmitter",
-                "async",
-                "coroutine",
-                "eventloop",
-                "events",
-                "hooks",
-                "plugin",
-                "promise",
-                "reactor",
-                "signal"
-            ],
-            "time": "2018-03-05T13:55:47+00:00"
-        },
-        {
             "name": "symfony/console",
             "version": "4.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d39c11c9a7cd30edfdcd35d0e9b26f79077d8610"
+                "reference": "0a8153b7ec0b549a386d040278a0b6d6f18b5760"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d39c11c9a7cd30edfdcd35d0e9b26f79077d8610",
-                "reference": "d39c11c9a7cd30edfdcd35d0e9b26f79077d8610",
+                "url": "https://api.github.com/repos/symfony/console/zipball/0a8153b7ec0b549a386d040278a0b6d6f18b5760",
+                "reference": "0a8153b7ec0b549a386d040278a0b6d6f18b5760",
                 "shasum": ""
             },
             "require": {
@@ -2856,7 +2542,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-07-09T07:02:15+00:00"
+            "time": "2019-07-10T18:47:17+00:00"
         },
         {
             "name": "symfony/finder",
@@ -3086,7 +2772,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "phpunit/phpunit": 20,
         "phpstan/phpstan": 20
     },
     "prefer-stable": false,

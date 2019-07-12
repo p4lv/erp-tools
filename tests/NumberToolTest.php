@@ -759,14 +759,14 @@ class NumberToolTest extends TestCase
     public function strictCorrectNumberToTextProvider()
     {
         return [
-            ['30', 'LV', 'LV', 'trīsdesmit'],
-            ['-80', 'LV', 'LV', 'mīnus astoņdesmit'],
-            ['0', 'LV', 'LV', 'nulle'],
-            ['0', 'GB', 'EN', 'zero'],
-            ['0', 'UK', 'EN', 'zero'],
-            ['0', 'UK', 'LV', 'nulle'],
-            ['0', 'LV', 'EN', 'zero'],
-            ['1337', 'RU', 'RU', 'одна тысяча триста тридцать семь'],
+            ['30', 'LV', 'trīsdesmit'],
+            ['-80', 'LV', 'mīnus astoņdesmit'],
+            ['0', 'LV', 'nulle'],
+            ['0', 'EN', 'zero'],
+            ['0', 'EN', 'zero'],
+            ['0', 'LV', 'nulle'],
+            ['0', 'EN', 'zero'],
+            ['1337', 'RU', 'одна тысяча триста тридцать семь'],
         ];
     }
 
@@ -774,9 +774,9 @@ class NumberToolTest extends TestCase
      * @test
      * @dataProvider strictCorrectNumberToTextProvider
      */
-    public function strictCorrectNumberToText($a, $b, $c, $expectedResult)
+    public function strictCorrectNumberToText($a, $b,  $expectedResult)
     {
-        $actualResult = NumberTool::numberToText($a, $b, $c);
+        $actualResult = NumberTool::numberToText($a, $b);
         self::assertSame($actualResult, $expectedResult);
     }
 
