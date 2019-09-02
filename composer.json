@@ -1,4 +1,4 @@
-{
+e{
   "name": "mogo-africa/common-tool",
   "description": "ERP package",
   "version": "0.1.0",
@@ -11,8 +11,8 @@
   },
   "minimum-stability": "dev",
   "require" : {
-    "php" : "^7.1"
-
+    "php" : "^7.1",
+    "ext-bcmath": "*"
   },
   "license": [
     "LGPL-2.1-only",
