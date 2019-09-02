@@ -545,4 +545,18 @@ class DateToolTest extends TestCase
         $output = DateTool::yesterdayDate();
         self::assertEquals($output, $expectation);
     }
+
+    /**
+     * @test
+     */
+    public function toText()
+    {
+        $date = new DateTime('2019-05-05');
+        $output = DateTool::toText($date, '');
+        self::assertSame('May 5th 2019', $output);
+        $output = DateTool::toText($date, 'le');
+        self::assertSame('May 5th 2019', $output);
+        $output = DateTool::toText($date, 'ke');
+        self::assertSame('May 5th 2019', $output);
+    }
 }

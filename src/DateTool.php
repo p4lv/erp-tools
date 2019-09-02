@@ -105,7 +105,7 @@ class DateTool
         return $d1->diff($d2)->days;
     }
 
-    public static function toText(\DateTime $date, string $country): string
+    public static function toText(\DateTime $date, ?string $country = null): string
     {
         return $date->format('F jS Y');
     }
