@@ -6,9 +6,9 @@
   },
   "timeout": 10,
   "logs": {
-    "text": "tests/report/infection/infection.log",
-    "summary": "tests/report/infection/summary.log",
-    "perMutator": "tests/report/infection/per-mutator.md",
+    "text": "test/report/infection/infection.log",
+    "summary": "test/report/infection/summary.log",
+    "perMutator": "test/report/infection/per-mutator.md",
     "badge": {
       "branch": "master"
     }
@@ -24,6 +24,5 @@
   },
   "testFramework":"phpunit",
   "bootstrap":"./tests/bootstrap.php",
-  "initialTestsPhpOptions": "-d zend_extension=xdebug.so",
   "testFrameworkOptions": "-vvv"
 }

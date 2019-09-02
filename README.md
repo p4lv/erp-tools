@@ -1,6 +1,8 @@
 # ERP tools.
 
 
+!! Important: Xdebug must be installed to run all test cases.
+
 ## please check before pushing with this:
 Phpunit: ``./vendor/bin/phpunit -c phpunit.xml ``
 
