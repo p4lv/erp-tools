@@ -36,6 +36,16 @@ class DateToolTest extends TestCase
                 true
             ],
             [
+                (new DateTime),
+                (new DateTime),
+                false
+            ],
+            [
+                $now,
+                $now,
+                false
+            ],
+            [
                 (new DateTime)->setDate($now->format('Y') - 1, $now->format('m'), $now->format('d')),
                 (new DateTime),
                 false
@@ -102,6 +112,11 @@ class DateToolTest extends TestCase
             $changedHour = $hour - 1;
         }
         return [
+            [
+                $now,
+                $now,
+                true
+            ],
             [
                 (new DateTime),
                 (new DateTime),
@@ -185,6 +200,11 @@ class DateToolTest extends TestCase
             $changedHour = $hour - 1;
         }
         return [
+            [
+                $now,
+                $now,
+                true
+            ],
             [
                 (new DateTime),
                 (new DateTime),
@@ -444,6 +464,7 @@ class DateToolTest extends TestCase
     {
         $output = DateTool::currentDate();
         self::assertEquals($output, (new DateTime)->setTime(0, 0, 0));
+        self::assertEquals($output, new DateTime('today'));
     }
 
 
