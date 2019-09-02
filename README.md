@@ -6,6 +6,8 @@ Phpunit: ``./vendor/bin/phpunit -c phpunit.xml ``
 
 Phpstan: ``./vendor/bin/phpstan analyse src tests``
 
+Infection: ``./vendor/bin/infection  --initial-tests-php-options="-d zend_extension=xdebug.so"``
+
 
 ## Goal
 - make coverage 100%

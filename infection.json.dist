@@ -1,0 +1,38 @@
+{
+  "source": {
+    "directories": [
+      "src"
+    ],
+    "excludes": [
+      "Config",
+      "Folder/with/File.php"
+    ]
+  },
+  "timeout": 10,
+  "logs": {
+    "text": "infection.log",
+    "summary": "summary.log",
+    "perMutator": "per-mutator.md",
+    "badge": {
+      "branch": "master"
+    }
+  },
+  "tmpDir": "/opt/tmp-folder",
+  "phpUnit": {
+    "configDir": "app",
+    "customPath": "\/path\/to\/phpunit-6.1.phar"
+  },
+  "mutators": {
+    "@default": true,
+    "@function_signature": false,
+    "TrueValue": {
+      "ignore": [
+        "NameSpace\\*\\Class::method"
+      ]
+    }
+  },
+  "testFramework":"phpunit",
+  "bootstrap":"./tests/bootstrap.php",
+  "initialTestsPhpOptions": "-d zend_extension=xdebug.so",
+  "testFrameworkOptions": "-vvv"
+}

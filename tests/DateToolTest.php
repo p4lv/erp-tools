@@ -64,6 +64,16 @@ class DateToolTest extends TestCase
                 false
             ],
             [
+                (new DateTime),
+                (new DateTime),
+                false
+            ],
+            [
+                $now,
+                $now,
+                false
+            ],
+            [
                 (new DateTime)->setDate($now->format('Y') - 1, $now->format('m'), $now->format('d')),
                 (new DateTime),
                 true
