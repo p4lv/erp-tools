@@ -6,9 +6,9 @@
   },
   "timeout": 10,
   "logs": {
-    "text": "test/report/infection/infection.log",
-    "summary": "test/report/infection/summary.log",
-    "perMutator": "test/report/infection/per-mutator.md",
+    "text": "tests/report/infection/infection.log",
+    "summary": "tests/report/infection/summary.log",
+    "perMutator": "tests/report/infection/per-mutator.md",
     "badge": {
       "branch": "master"
     }
