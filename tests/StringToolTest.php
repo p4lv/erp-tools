@@ -424,6 +424,14 @@ class StringToolTest extends TestCase
         self::assertEquals(strlen($output), $expectation);
     }
 
+    /**
+     * @test
+     */
+    public function throwExceptionPAssword()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        StringTool::password(1);
+    }
 
     public function polishToLatinDataProvider()
     {

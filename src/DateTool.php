@@ -32,8 +32,16 @@ class DateTool
         return self::convertToDate($d1) >= self::convertToDate($d2);
     }
 
-    public static function smallerOrSameDate(DateTime $d1, DateTime $d2): bool
+    public static function smallerOrSameDate(?DateTime $d1, ?DateTime $d2): bool
     {
+        if(null === $d1) {
+            return true;
+        }
+
+        if(null === $d2) {
+            return false;
+        }
+
         return self::convertToDate($d1) <= self::convertToDate($d2);
     }
 
