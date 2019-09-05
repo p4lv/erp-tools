@@ -1,0 +1,25 @@
+stages:
+  - check
+  - test
+
+linter:
+  script:
+    - find -type f -name '*.php' -not -path './vendor/*' -not -path './var/*'  -print0 | xargs -n 1 -0 php -l
+  stage: check
+  tags:
+    - php72-runner
+
+stan:
+  script:
+    - ./vendor/bin/phpstan analyse src tests
+  stage: check
+  tags:
+    - php72-runner
+
+unit:
+  script:
+    - ./vendor/bin/phpunit -c phpunit.xml
+    - ./vendor/bin/infection  --initial-tests-php-options="-d zend_extension=xdebug.so" --min-msi=53 --threads=4
+  stage: test
+  tags:
+    - php72-runner
