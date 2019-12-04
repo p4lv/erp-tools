@@ -10,6 +10,15 @@ class NumberTool
     protected const SCALE = 10;
 
     /**
+     * Convert numeric variable to string with right formatting
+     * @param mixed $s
+     * @return string
+     */
+    private static function f($s)
+    {
+        return sprintf('%.' . self::SCALE . 'f', $s);
+    }
+    /**
      * Performs addition
      * NumberTool::add('2.71', '3.18') //5.89
      * @param string $op1
@@ -19,7 +28,7 @@ class NumberTool
      */
     public static function add($op1, $op2, $round = true)
     {
-        $res = bcadd($op1, $op2, self::SCALE);
+        $res = bcadd(self::f($op1), self::f($op2), self::SCALE);
         return $round ? self::round($res) : $res;
     }
 
@@ -33,7 +42,7 @@ class NumberTool
      */
     public static function sub($op1, $op2, $round = true)
     {
-        $res = bcsub($op1, $op2, self::SCALE);
+        $res = bcsub(self::f($op1), self::f($op2), self::SCALE);
         return $round ? self::round($res) : $res;
     }
 
@@ -47,7 +56,7 @@ class NumberTool
      */
     public static function mul($op1, $op2, $round = true)
     {
-        $res = bcmul($op1, $op2, self::SCALE);
+        $res = bcmul(self::f($op1), self::f($op2), self::SCALE);
         return $round ? self::round($res) : $res;
     }
 
@@ -61,7 +70,7 @@ class NumberTool
      */
     public static function div($op1, $op2, $round = true)
     {
-        $res = bcdiv($op1, $op2, self::SCALE);
+        $res = bcdiv(self::f($op1), self::f($op2), self::SCALE);
         return $round ? self::round($res) : $res;
     }
 
@@ -82,6 +91,7 @@ class NumberTool
     /**
      * Truncates decimal number to given precision
      * NumberTool::truncate('1.9999', 2) //1.99
+     * TODO: rework for using sprintf
      * @param string $number
      * @param integer $precision
      * @return string
@@ -106,8 +116,8 @@ class NumberTool
      */
     public static function abs($number)
     {
-        $number = (string)$number;
-        if (strlen($number) === 0) {
+        $number = self::f($number);
+        if ($number === '') {
             return $number;
         }
 
@@ -193,7 +203,7 @@ class NumberTool
      */
     public static function percent($amount, $percentage, $round = true)
     {
-        $res = bcmul($amount, bcdiv($percentage, '100', self::SCALE), self::SCALE);
+        $res = bcmul(self::f($amount), bcdiv(self::f($percentage), '100', self::SCALE), self::SCALE);
         return $round ? self::round($res) : $res;
     }
 
@@ -205,7 +215,7 @@ class NumberTool
      */
     public static function addPercent($amount, $percentage, $round = true)
     {
-        $res = bcadd($amount, self::percent($amount, $percentage), self::SCALE);
+        $res = bcadd(self::f($amount), self::percent(self::f($amount), self::f($percentage)), self::SCALE);
         return $round ? self::round($res) : $res;
     }
 
@@ -245,7 +255,7 @@ class NumberTool
 
     public static function isZero($number): bool
     {
-        return (float)$number === (float)0;
+        return (float)$number === .0;
     }
 
     /**
@@ -273,7 +283,7 @@ class NumberTool
      */
     public static function gt($left, $right): bool
     {
-        return bccomp($left, $right, self::SCALE) === 1;
+        return bccomp(self::f($left), self::f($right), self::SCALE) === 1;
     }
 
     /**
@@ -284,7 +294,8 @@ class NumberTool
      */
     public static function gte($left, $right): bool
     {
-        return self::gt($left, $right) || self::eq($left, $right);
+        $comp = bccomp(self::f($left), self::f($right), self::SCALE);
+        return $comp === 0 || $comp === 1;
     }
 
     /**
@@ -295,7 +306,7 @@ class NumberTool
      */
     public static function lt($left, $right): bool
     {
-        return bccomp($left, $right, self::SCALE) === -1;
+        return bccomp(self::f($left), self::f($right), self::SCALE) === -1;
     }
 
     /**
@@ -306,7 +317,8 @@ class NumberTool
      */
     public static function lte($left, $right): bool
     {
-        return self::lt($left, $right) || self::eq($left, $right);
+        $comp = bccomp(self::f($left), self::f($right), self::SCALE);
+        return $comp === 0 || $comp === -1;
     }
 
     /**
@@ -317,7 +329,7 @@ class NumberTool
      */
     public static function eq($left, $right): bool
     {
-        return bccomp($left, $right, self::SCALE) === 0;
+        return bccomp(self::f($left), self::f($right), self::SCALE) === 0;
     }
 
     /**
