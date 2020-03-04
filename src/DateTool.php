@@ -2,37 +2,35 @@
 
 namespace Common\Tool;
 
-use DateTime;
-
 class DateTool
 {
 
-    public static function convertToDate(DateTime $d): DateTime
+    public static function convertToDate(\DateTimeInterface $d): \DateTime
     {
-        return (new DateTime)->createFromFormat('Ymd', $d->format('Ymd'))->setTime(0, 0, 0);
+        return (new \DateTime)->createFromFormat('Ymd', $d->format('Ymd'))->setTime(0, 0, 0);
     }
 
-    public static function greaterDate(DateTime $d1, DateTime $d2): bool
+    public static function greaterDate(\DateTimeInterface $d1, \DateTimeInterface $d2): bool
     {
         return self::convertToDate($d1) > self::convertToDate($d2);
     }
 
-    public static function smallerDate(DateTime $d1, DateTime $d2): bool
+    public static function smallerDate(\DateTimeInterface $d1, \DateTimeInterface $d2): bool
     {
         return self::convertToDate($d1) < self::convertToDate($d2);
     }
 
-    public static function sameDate(DateTime $d1, DateTime $d2): bool
+    public static function sameDate(\DateTimeInterface $d1, \DateTimeInterface $d2): bool
     {
         return self::convertToDate($d1) == self::convertToDate($d2);
     }
 
-    public static function greaterOrSameDate(DateTime $d1, DateTime $d2): bool
+    public static function greaterOrSameDate(\DateTimeInterface $d1, \DateTimeInterface $d2): bool
     {
         return self::convertToDate($d1) >= self::convertToDate($d2);
     }
 
-    public static function smallerOrSameDate(?DateTime $d1, ?DateTime $d2): bool
+    public static function smallerOrSameDate(?\DateTimeInterface $d1, ?\DateTimeInterface $d2): bool
     {
         if(null === $d1) {
             return true;
@@ -45,7 +43,7 @@ class DateTool
         return self::convertToDate($d1) <= self::convertToDate($d2);
     }
 
-    public static function inDateRange(DateTime $date, DateTime $periodFrom, DateTime $periodTo): bool
+    public static function inDateRange(\DateTimeInterface $date, \DateTimeInterface $periodFrom, \DateTimeInterface $periodTo): bool
     {
         return self::greaterOrSameDate($date, $periodFrom) && self::smallerOrSameDate($date, $periodTo);
     }
@@ -67,11 +65,11 @@ class DateTool
      * Add months _without overlapping_
      * 31/01 + 1 month = 28/02
      *
-     * @param DateTime $date
+     * @param \DateTimeInterface $date
      * @param int $months
-     * @return DateTime
+     * @return \DateTimeInterface
      */
-    public static function addMonths(DateTime $date, int $months): DateTime
+    public static function addMonths(\DateTime $date, int $months): \DateTime
     {
         $startDay = $date->format('j');
 
@@ -86,26 +84,26 @@ class DateTool
         return $date;
     }
 
-    public static function addDays(DateTime $date, $days): DateTime
+    public static function addDays(\DateTime $date, $days): \DateTime
     {
         $date->modify(sprintf('+%d day%s', $days, $days > 1 ? 's' : ''));
 
         return $date;
     }
 
-    public static function removeDays(DateTime $date, $days): DateTime
+    public static function removeDays(\DateTime $date, $days): \DateTime
     {
         $date->modify(sprintf('-%d day%s', $days, $days > 1 ? 's' : ''));
 
         return $date;
     }
 
-    public static function currentDate(): DateTime
+    public static function currentDate(): \DateTime
     {
-        return new DateTime('today');
+        return new \DateTime('today');
     }
 
-    public static function getDaysBetweenDates(DateTime $d1, DateTime $d2)
+    public static function getDaysBetweenDates(\DateTimeInterface $d1, \DateTimeInterface $d2)
     {
         $d1 = self::convertToDate($d1);
         $d2 = self::convertToDate($d2);
@@ -113,19 +111,19 @@ class DateTool
         return $d1->diff($d2)->days;
     }
 
-    public static function toText(\DateTime $date, ?string $country = null): string
+    public static function toText(\DateTimeInterface $date, ?string $country = null): string
     {
         return $date->format('F jS Y');
     }
 
     public static function valid($data): bool
     {
-        return $data instanceof DateTime;
+        return $data instanceof \DateTimeInterface;
     }
 
-    public static function yesterdayDate(): DateTime
+    public static function yesterdayDate(): \DateTime
     {
-        $yesterday = (new DateTime)->modify('yesterday');
+        $yesterday = (new \DateTime)->modify('yesterday');
 
         return self::convertToDate($yesterday);
     }
