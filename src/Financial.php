@@ -4,7 +4,7 @@ namespace Common\Tool;
 
 class Financial
 {
-    const FINANCIAL_ACCURACY = 1.0e-6;
+    const FINANCIAL_ACCURACY       = 1.0e-6;
     const FINANCIAL_MAX_ITERATIONS = 100;
 
     private static $isInitialized = false;
@@ -26,8 +26,9 @@ class Financial
      *                 nper
      * PVIF = (1 + rate)
      *
-     * @param float $rate is the interest rate per period.
+     * @param float   $rate is the interest rate per period.
      * @param integer $nper is the total number of periods.
+     *
      * @return float  the present value interest factor
      */
     private static function PVIF($rate, $nper)
@@ -45,8 +46,9 @@ class Financial
      * FVIFA = -------------------
      *               rate
      *
-     * @param float $rate is the interest rate per period.
+     * @param float   $rate is the interest rate per period.
      * @param integer $nper is the total number of periods.
+     *
      * @return float  the present value interest factor of annuities
      */
     private static function FVIFA($rate, $nper)
@@ -66,6 +68,7 @@ class Financial
      * @param $pmt
      * @param $rate
      * @param $period
+     *
      * @return mixed
      */
     private static function interestPart($pv, $pmt, $rate, $period)
@@ -93,12 +96,13 @@ class Financial
      *
      * For a more complete description of the arguments in IPMT, see the PV function.
      *
-     * @param $rate
-     * @param $per
-     * @param $nper
-     * @param $pv
+     * @param       $rate
+     * @param       $per
+     * @param       $nper
+     * @param       $pv
      * @param float $fv
-     * @param int $type
+     * @param int   $type
+     *
      * @return mixed|null
      */
     public static function IPMT($rate, $per, $nper, $pv, $fv = 0.0, $type = 0)
@@ -126,12 +130,13 @@ class Financial
      * investment based on periodic, constant payments and a constant
      * interest rate.
      *
-     * @param $rate
-     * @param $per
-     * @param $nper
-     * @param $pv
+     * @param       $rate
+     * @param       $per
+     * @param       $nper
+     * @param       $pv
      * @param float $fv
-     * @param int $type
+     * @param int   $type
+     *
      * @return float|null
      */
     public static function PPMT($rate, $per, $nper, $pv, $fv = 0.0, $type = 0)
@@ -160,8 +165,9 @@ class Financial
      *       i=1 |            i   |
      *            \  (1 + rate)  /
      *
-     * @param float $rate
+     * @param float   $rate
      * @param float[] $values
+     *
      * @return float|int|null
      */
     private static function NPV($rate, $values)
@@ -191,7 +197,8 @@ class Financial
      * values) and income (positive values) that occur at regular periods.
      *
      * @param float[] $values
-     * @param float $guess
+     * @param float   $guess
+     *
      * @return float|null
      */
     public static function IRR($values, $guess = 0.1)
@@ -247,8 +254,9 @@ class Financial
 
     /**
      * @param float[] $values
-     * @param int[] $timestamps
-     * @param float $guess
+     * @param int[]   $timestamps
+     * @param float   $guess
+     *
      * @return float|null
      */
     public static function XIRR($values, $timestamps, $guess = 0.1)
@@ -340,5 +348,23 @@ class Financial
         }
 
         return $result;
+    }
+
+
+    /**
+     * @param float   $apr  Interest rate.
+     * @param integer $term Loan length in years.
+     * @param float   $loan The loan amount.
+     *
+     * @return float
+     */
+    public function calculatePMT($apr, int $term, $loan): float
+    {
+        $term = $term * 12;
+        $apr = $apr / 1200;
+        $amount = $apr * -$loan * ((1 + $apr) ** $term) / (1 - ((1 + $apr) ** $term));
+
+        return round($amount);
+
     }
 }
