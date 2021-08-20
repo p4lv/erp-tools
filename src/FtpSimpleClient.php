@@ -182,7 +182,7 @@ class FtpSimpleClient
         $handle = fopen('php://temp', 'w');
         fwrite($handle, $content);
         rewind($handle);
-        if (@ftp_fput($this->conn, $remote_file, $handle, FTP_BINARY)) {
+        if (ftp_fput($this->conn, $remote_file, $handle, FTP_BINARY)) {
             return $this;
         }
 
@@ -203,7 +203,7 @@ class FtpSimpleClient
     {
         $remote_file = basename($local_file);
         $handle = fopen($local_file, 'r');
-        if (@ftp_fput($this->conn, $remote_file, $handle, FTP_BINARY)) {
+        if (ftp_fput($this->conn, $remote_file, $handle, FTP_BINARY)) {
             rewind($handle);
             return $this;
         }
@@ -261,7 +261,7 @@ class FtpSimpleClient
      */
     public function chdir($directory)
     {
-        $result = @ftp_chdir($this->conn, $directory);
+        $result = ftp_chdir($this->conn, $directory);
         if ($result === false) {
             throw new \Exception(sprintf($this->error,
                 'Unable to change the current directory'
@@ -332,7 +332,7 @@ class FtpSimpleClient
         }
 
         // Check if needed directory exists
-        if (@ftp_chdir($this->conn, $directory)) {
+        if (ftp_chdir($this->conn, $directory)) {
             $result = true;
         }
 

@@ -18,6 +18,7 @@ class NumberTool
     {
         return sprintf('%.' . self::SCALE . 'f', $s);
     }
+
     /**
      * Performs addition
      * NumberTool::add('2.71', '3.18') //5.89
@@ -91,7 +92,6 @@ class NumberTool
     /**
      * Truncates decimal number to given precision
      * NumberTool::truncate('1.9999', 2) //1.99
-     * TODO: rework for using sprintf
      * @param string $number
      * @param integer $precision
      * @return string
@@ -227,8 +227,8 @@ class NumberTool
      */
     public static function beforePercentAddition($result, $percentage, $round = true)
     {
-        // ($result / ($percentage + 100)) * 100;
         $res = bcmul(bcdiv($result, bcadd($percentage, '100', self::SCALE), self::SCALE), '100', self::SCALE);
+
         return $round ? self::round($res) : $res;
     }
 
@@ -458,7 +458,7 @@ class NumberTool
         bcscale(self::SCALE);
 
         $argv = func_get_args();
-        $string = str_replace(' ', '', "({$argv[0]})"); //todo: test this fucking shit.
+        $string = str_replace(' ', '', "({$string})");
 
         $operations = [];
         if (strpos($string, '^') !== false) {
