@@ -84,22 +84,6 @@ class FtpSimpleClient
     }
 
     /**
-     * Overwrite maximum memory limit.
-     *
-     * @access public
-     * @param mixed $memory
-     * @return \Common\Tool\FtpSimpleClient
-     */
-    public function setMaxMemoryLimit($memory = null)
-    {
-        if (null !== $memory) {
-            ini_set('memory_limit', $memory);
-        }
-
-        return $this;
-    }
-
-    /**
      * Opens a FTP or SSL-FTP connection.
      * Sets up stream resource on success or FALSE on error.
      *
