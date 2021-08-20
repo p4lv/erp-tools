@@ -4,8 +4,8 @@ namespace Common\Tool;
 
 class Financial
 {
-    const FINANCIAL_ACCURACY       = 1.0e-6;
-    const FINANCIAL_MAX_ITERATIONS = 100;
+    private const FINANCIAL_ACCURACY       = 1.0e-6;
+    private const FINANCIAL_MAX_ITERATIONS = 100;
 
     private static $isInitialized = false;
 

@@ -8,7 +8,7 @@ class Censor
      * @param mixed $value
      * @return string|null
      */
-    public static function censure($value)
+    public static function censure($value): ?string
     {
         if ($value === null) {
             return $value;

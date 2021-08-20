@@ -259,7 +259,7 @@ class FtpSimpleClient
      * @return \Common\Tool\FtpSimpleClient
      * @throws \Exception on failure
      */
-    public function chdir($directory)
+    public function chdir(string $directory): self
     {
         $result = ftp_chdir($this->conn, $directory);
         if ($result === false) {
