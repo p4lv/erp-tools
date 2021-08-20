@@ -1,6 +1,6 @@
 {
-  "name": "mogo-africa/common-tool",
-  "description": "ERP package",
+  "name": "p4/erp-common-tool",
+  "description": "ERP common functions package",
   "type": "library",
   "autoload": {
     "psr-4": {
