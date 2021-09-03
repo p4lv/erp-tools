@@ -109,7 +109,27 @@ class FinancialTest extends TestCase
                     strtotime('2021-02-01'),
                     strtotime('2021-03-01'),
                     ], 1,
-            ]
+            ],
+            'aa1' => [
+                336.92731973104264, [-100, 100, 100,], [
+                    strtotime('2021-01-01'),
+                    strtotime('2021-02-01'),
+                    strtotime('2021-03-01'),
+                    ], 1,
+            ],
+            'aa2' => [
+                null, [-100, -100, -100,], [
+                    strtotime('2021-01-01'),
+                    strtotime('2021-02-01'),
+                    strtotime('2021-03-01'),
+                    ], 1,
+            ],
+            'null' => [
+                null, [100, 100, 100,], [
+
+                    strtotime('2021-03-01'),
+                    ], 1,
+            ],
         ];
     }
 
