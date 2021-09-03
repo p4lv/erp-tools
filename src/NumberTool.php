@@ -135,7 +135,7 @@ class NumberTool
      * @param integer $precision
      * @return string
      */
-    public static function round($val, $precision = 2)
+    public static function round($val, int $precision = 2): string
     {
         return number_format(round($val, $precision), $precision, '.', '');
     }
@@ -188,7 +188,7 @@ class NumberTool
      * @param int $precision
      * @return string
      */
-    public static function roundCustom($val, int $precision = 1)
+    public static function roundCustom($val, int $precision = 1): string
     {
         return self::round($val, $precision);
     }
@@ -493,6 +493,7 @@ class NumberTool
 
     private static function getResult($m1, string $operator, $m3)
     {
+        $result = null;
         switch ($operator) {
             case '+':
                 $result = bcadd($m1, $m3);
