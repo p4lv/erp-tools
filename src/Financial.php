@@ -96,12 +96,16 @@ class Financial
      *
      * For a more complete description of the arguments in IPMT, see the PV function.
      *
-     * @param       $rate
-     * @param       $per
-     * @param       $nper
-     * @param       $pv
-     * @param float $fv
-     * @param int   $type
+     *
+     * Make sure that you are consistent about the units you use for specifying rate and nper. If you make monthly payments on a four-year loan at 12 percent annual interest, use 12%/12 for rate and 4*12 for nper. If you make annual payments on the same loan, use 12% for rate and 4 for nper.
+     * For all the arguments, cash you pay out, such as deposits to savings, is represented by negative numbers; cash you receive, such as dividend checks, is represented by positive numbers.
+     *
+     * @param       $rate  // The interest rate per period.
+     * @param       $per   // The period for which you want to find the interest and must be in the range 1 to nper.
+     * @param       $nper  // The total number of payment periods in an annuity.
+     * @param       $pv    // The present value, or the lump-sum amount that a series of future payments is worth right now.
+     * @param float $fv    // The future value, or a cash balance you want to attain after the last payment is made. If fv is omitted, it is assumed to be 0 (the future value of a loan, for example, is 0).
+     * @param int   $type  // The number 0 or 1 and indicates when payments are due. If type is omitted, it is assumed to be 0.
      *
      * @return mixed|null
      */
@@ -130,12 +134,12 @@ class Financial
      * investment based on periodic, constant payments and a constant
      * interest rate.
      *
-     * @param       $rate
-     * @param       $per
-     * @param       $nper
-     * @param       $pv
-     * @param float $fv
-     * @param int   $type
+     * @param       $rate //Required. The interest rate per period.
+     * @param       $per //Required. The period for which you want to find the interest and must be in the range 1 to nper.
+     * @param       $nper //Required. The total number of payment periods in an annuity.
+     * @param       $pv //Required. The present value, or the lump-sum amount that a series of future payments is worth right now.
+     * @param float $fv //Optional. The future value, or a cash balance you want to attain after the last payment is made. If fv is omitted, it is assumed to be 0 (the future value of a loan, for example, is 0).
+     * @param int   $type //Optional. The number 0 or 1 and indicates when payments are due. If type is omitted, it is assumed to be 0.
      *
      * @return float|null
      */
