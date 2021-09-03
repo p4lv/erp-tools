@@ -11,7 +11,8 @@
   "minimum-stability": "dev",
   "require" : {
     "php" : ">=7.2",
-    "ext-bcmath": "*"
+    "ext-bcmath": "*",
+    "ext-iconv": "*"
   },
   "license": [
     "LGPL-2.1-only",

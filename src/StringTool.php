@@ -114,11 +114,13 @@ class StringTool
 
         $return = array();
         foreach ($input as $key => $value) {
-            if (strpos($key, $prefix) === 0)
+            if (strpos($key, $prefix) === 0) {
                 $key = substr($key, mb_strlen($prefix));
+            }
 
-            if (is_array($value))
-                $value = self::getArrayWithRemovedPrefixRecursive($value, $prefix); 
+            if (is_array($value)) {
+                $value = self::getArrayWithRemovedPrefixRecursive($value, $prefix);
+            }
 
             $return[$key] = $value;
         }
@@ -126,7 +128,7 @@ class StringTool
     }    
 
     // possible TODO fix type Combionation to Combination
-    public static function createCombionationsFromStringWords($phrase = '')
+    public static function createCombionationsFromStringWords($phrase = ''): array
     {
         $phrase = preg_replace('/\s+/', ' ', strtolower($phrase));
         $words = explode(' ', $phrase);
@@ -134,7 +136,7 @@ class StringTool
         return self::createCombionationsFromWords($words);
     }
 
-    public static function createCombionationsFromWords($words = [])
+    public static function createCombionationsFromWords($words = []): array
     {
         array_walk($words, 'trim');
 
