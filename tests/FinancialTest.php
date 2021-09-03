@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Test\Common\Tool;
 
 use Common\Tool\Financial;
 use PHPUnit\Framework\TestCase;

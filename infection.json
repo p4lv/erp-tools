@@ -4,6 +4,7 @@
       "src"
     ]
   },
+  "tmpDir": "/tmp",
   "timeout": 10,
   "logs": {
     "text": "tests/report/infection/infection.log",

@@ -1,5 +1,7 @@
 <?php
 
+namespace Test\Common\Tool;
+
 use Common\Tool\DateTool;
 use DateTime;
 use PHPUnit\Framework\TestCase;
@@ -9,7 +11,7 @@ class DateToolTest extends TestCase
     public function correctConvertToDateDataProvider()
     {
         return [
-            [(new DateTime), (new DateTime)->setTime(0, 0, 0)],
+            [(new \DateTime), (new \DateTime)->setTime(0, 0, 0)],
         ];
     }
 

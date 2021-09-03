@@ -1,5 +1,6 @@
 <?php
 
+namespace Test\Common\Tool;
 use Common\Tool\StringTool;
 use PHPUnit\Framework\TestCase;
 

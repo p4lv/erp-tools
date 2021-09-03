@@ -2,25 +2,17 @@
   "source": {
     "directories": [
       "src"
-    ],
-    "excludes": [
-      "Config",
-      "Folder/with/File.php"
     ]
   },
+  "tmpDir": "/tmp",
   "timeout": 10,
   "logs": {
-    "text": "infection.log",
-    "summary": "summary.log",
-    "perMutator": "per-mutator.md",
+    "text": "tests/report/infection/infection.log",
+    "summary": "tests/report/infection/summary.log",
+    "perMutator": "tests/report/infection/per-mutator.md",
     "badge": {
       "branch": "master"
     }
-  },
-  "tmpDir": "/opt/tmp-folder",
-  "phpUnit": {
-    "configDir": "app",
-    "customPath": "\/path\/to\/phpunit-6.1.phar"
   },
   "mutators": {
     "@default": true,
@@ -33,6 +25,5 @@
   },
   "testFramework":"phpunit",
   "bootstrap":"./tests/bootstrap.php",
-  "initialTestsPhpOptions": "-d zend_extension=xdebug.so",
   "testFrameworkOptions": "-vvv"
 }

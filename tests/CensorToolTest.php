@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Test\Common\Tool;
 use Common\Tool\Censor;
 use PHPUnit\Framework\TestCase;
 

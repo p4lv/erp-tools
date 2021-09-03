@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Test\Common\Tool;
 use PHPUnit\Framework\TestCase;
 use \Common\Tool\Transliterator;
 
