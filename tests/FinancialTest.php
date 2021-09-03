@@ -91,6 +91,29 @@ class FinancialTest extends TestCase
     }
 
     /**
+     * @dataProvider xirrDataProvider
+     * @test
+     */
+    public function xirr($excpected, array $values, $timestamps, $guess = 0.1)
+    {
+        $result = Financial::XIRR($values, $timestamps, $guess);
+        self::assertSame($excpected, $result);
+    }
+
+    public function xirrDataProvider()
+    {
+        return [
+            'aa' => [
+                null, [100, 100, 100,], [
+                    strtotime('2021-01-01'),
+                    strtotime('2021-02-01'),
+                    strtotime('2021-03-01'),
+                    ], 1,
+            ]
+        ];
+    }
+
+    /**
      * @test
      * @dataProvider irrDataProvider
      */
@@ -118,4 +141,5 @@ class FinancialTest extends TestCase
 
         ];
     }
+
 }
