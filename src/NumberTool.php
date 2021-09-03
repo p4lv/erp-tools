@@ -481,46 +481,7 @@ class NumberTool
         while (preg_match('/\(([^\)\(]*)\)/', $string, $match)) {
             foreach ($operations as $operation) {
                 if (preg_match("/([+-]{0,1}[0-9\.]+)($operation)([+-]{0,1}[0-9\.]+)/", $match[1], $m)) {
-                    switch ($m[2]) {
-                        case '+':
-                            $result = bcadd($m[1], $m[3]);
-                            break;
-                        case '-':
-                            $result = bcsub($m[1], $m[3]);
-                            break;
-                        case '*':
-                            $result = bcmul($m[1], $m[3]);
-                            break;
-                        case '/':
-                            $result = bcdiv($m[1], $m[3]);
-                            break;
-                        case '%':
-                            $result = bcmod($m[1], $m[3]);
-                            break;
-                        case '^':
-                            $result = bcpow($m[1], $m[3]);
-                            break;
-                        case '==':
-                        case '=':
-                            $result = bccomp($m[1], $m[3]) === 0;
-                            break;
-                        case '>':
-                            $result = bccomp($m[1], $m[3]) === 1;
-                            break;
-                        case '<':
-                            $result = bccomp($m[1], $m[3]) === -1;
-                            break;
-                        case '>=':
-                            $result = bccomp($m[1], $m[3]) >= 0;
-                            break;
-                        case '<=':
-                            $result = bccomp($m[1], $m[3]) <= 0;
-                            break;
-                        case '<>':
-                        case '!=':
-                            $result = bccomp($m[1], $m[3]) != 0;
-                            break;
-                    }
+                    $result = self::getResult($m[1], $m[2], $m[3]);
                     $match[1] = str_replace($m[0], $result, $match[1]);
                 }
             }
@@ -528,5 +489,50 @@ class NumberTool
         }
 
         return $string;
+    }
+
+    private static function getResult($m1, string $operator, $m3)
+    {
+        switch ($operator) {
+            case '+':
+                $result = bcadd($m1, $m3);
+                break;
+            case '-':
+                $result = bcsub($m1, $m3);
+                break;
+            case '*':
+                $result = bcmul($m1, $m3);
+                break;
+            case '/':
+                $result = bcdiv($m1, $m3);
+                break;
+            case '%':
+                $result = bcmod($m1, $m3);
+                break;
+            case '^':
+                $result = bcpow($m1, $m3);
+                break;
+            case '==':
+            case '=':
+                $result = bccomp($m1, $m3) === 0;
+                break;
+            case '>':
+                $result = bccomp($m1, $m3) === 1;
+                break;
+            case '<':
+                $result = bccomp($m1, $m3) === -1;
+                break;
+            case '>=':
+                $result = bccomp($m1, $m3) >= 0;
+                break;
+            case '<=':
+                $result = bccomp($m1, $m3) <= 0;
+                break;
+            case '<>':
+            case '!=':
+                $result = bccomp($m1, $m3) != 0;
+                break;
+        }
+        return $result;
     }
 }
