@@ -188,7 +188,7 @@ class NumberTool
      * @param int $precision
      * @return string
      */
-    public static function roundCustom($val, $precision = 1)
+    public static function roundCustom($val, int $precision = 1)
     {
         return self::round($val, $precision);
     }
@@ -434,12 +434,12 @@ class NumberTool
     /**
      * @param float|int $total
      * @param float|int $partial
-     * @return float|int
+     * @return string
      */
-    public static function getPercentageBetweenTwo($total, $partial)
+    public static function getPercentageBetweenTwo($total, $partial): string
     {
         if (0 == $partial) {
-            return 0;
+            return '0';
         }
 
         return number_format(($partial / $total) * 100, 2);
