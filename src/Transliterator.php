@@ -2,18 +2,9 @@
 
 namespace Common\Tool;
 
-/**
- * Class Transliterator
- * @package Common\Tool
- */
 class Transliterator
 {
-    /**
-     * @param $string
-     * @param bool $transliterateCyrillic
-     * @return string
-     */
-    public static function unaccent($string, $transliterateCyrillic = true)
+    public static function unaccent(string $string, bool $transliterateCyrillic = true): string
     {
         if ($transliterateCyrillic) {
             $cyr  = ['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у',

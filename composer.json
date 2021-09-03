@@ -12,7 +12,8 @@
   "require" : {
     "php" : ">=7.2",
     "ext-bcmath": "*",
-    "ext-iconv": "*"
+    "ext-iconv": "*",
+    "ext-dom": "*"
   },
   "license": [
     "LGPL-2.1-only",
